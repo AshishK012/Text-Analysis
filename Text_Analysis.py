@@ -12,7 +12,6 @@ from textblob import TextBlob
 from nltk.corpus import cmudict
 
 
-
 def positive_negative_score(tokens,words,text):
     positive_wds = set(opinion_lexicon.positive())
     negative_wds = set(opinion_lexicon.negative())
@@ -26,15 +25,14 @@ def positive_negative_score(tokens,words,text):
         if e in negative_wds:
             n.append(e)
     neg=len(n)
-    
-    
-    print(f"Positive {pos}, negative {neg}")
+    print(f"POSITIVE SCORE {pos}, NEGATIVE SCORE {neg}")
     Polarity_Score(pos,neg,tokens,words,text)
-    
+
+
 def avg_sentence_length(tokens,text):
     sentences = nltk.sent_tokenize(text)
     total_words = sum(len(tokens) for sentence in sentences)
-    print("avg_sentence_length: ",total_words / len(sentences) )
+    print("AVG SENTENCE LENGTH: ",total_words / len(sentences) )
     percentage_complex_words(tokens,text)
     #calculate_fog_index(tokens,text)
     
@@ -43,24 +41,22 @@ def calculate_avg_per_sentence(tokens,text):
     sentence=sent_tokenize(text)
     try:
         average=len(tokens)/len(sentence)
-        print("calculate_avg_per_sentence: ",average)
+        print("AVG NUMBER OF WORDS PER SENTENCE: ",average)
     except ZeroDivisionError:
-        print("calculate_avg_per_sentence: ",0)
+        print("AVG NUMBER OF WORDS PER SENTENCE: ",0)
     avg_sentence_length(tokens,text)
     
     
 def subjectivity_score(x,y,tokens,words,text):
     subjectivity=(x + y)/ (len(words) + 0.000001)
-    print("subjectivity_score: ",subjectivity)
-    
+    print("SUBJECTIVITY SCORE: ",subjectivity)
     calculate_avg_per_sentence(tokens,text)
 
    
 def Polarity_Score(x,y,tokens,words,text):
     Polarity= (x - y)/ ((x + y) + 0.000001)
-    print("Polarity_Score: ",Polarity)
+    print("POLARITY SCORE: ",Polarity)
     subjectivity_score(x,y,tokens,words,text)
-   
 
 
 def percentage_complex_words(tokens,text):
@@ -73,9 +69,9 @@ def percentage_complex_words(tokens,text):
             complex_word_count += 1
     try:
         complex_word=(complex_word_count / len(tokens))
-        print("percentage_complex_words: ",complex_word)
+        print("PERCENTAGE OF COMPLEX WORDS: ",complex_word)
     except ZeroDivisionError:
-        print("percentage_complex_words: ",0)
+        print("PERCENTAGE OF COMPLEX WORDS: ",0)
     calculate_word_count(tokens)
                     
 
@@ -93,10 +89,9 @@ def syllables_per_word(tokens):
         syllable_count=syllable_count + syllable_counter(word, cmudict_dict)[0]
     try:
         syllables_perword=(syllable_count / len(tokens))
-        print("syllables_per_word: ",syllables_perword)
+        print("SYLLABLE PER WORD: ",syllables_perword)
     except ZeroDivisionError:
-        print("syllables_per_word: ",0)
-        
+        print("SYLLABLE PER WORD: ",0)    
     calculate_personal_pronouns(tokens)
 
  
@@ -105,20 +100,16 @@ def calculate_personal_pronouns(tokens):
     for word in tokens:
         if word.lower() in ['i', 'me', 'my', 'mine', 'we', 'us', 'our', 'ours']:
             personal_pronoun_count += 1
-
-    print("calculate_personal_pronouns: ",personal_pronoun_count)
-    
+    print("PERSONAL PRONOUNS: ",personal_pronoun_count)
     avg_word_length(tokens)
 
 
 def avg_word_length(tokens):
     total_chars = sum(len(tokens) for word in tokens)
-    print("avg_word_length: ",total_chars / len(tokens))
+    print("AVG WORD LENGTH: ",total_chars / len(tokens))
     
-
-
 def calculate_word_count(tokens):
-    print("calculate_word_count: ",len(tokens))
+    print("WORD COUNT: ",len(tokens))
     syllables_per_word(tokens)
     
    
