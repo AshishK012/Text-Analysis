@@ -1,4 +1,4 @@
-# Text-Analysis
+# Web Scraping and Text Analysis
  <h1 style="text-align: center;">Data Extraction and NLP</h1><br>
  <p> This project is designed to automate the extraction and analysis of article content from a list of URLs provided in an Excel file (Input.xlsx). The solution uses web scraping techniques to collect text data and processes it using natural language processing (NLP) techniques such as tokenization and part-of-speech tagging. 
  </p>
