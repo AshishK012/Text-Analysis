@@ -15,6 +15,22 @@ While extracting text, please make sure your program extracts only the article t
 <p> For each of the extracted texts from the article, perform textual analysis and compute variables.
             </p><br>
         </li>
+<h4>Dependencies and Setup Instructions</h3>
+<p> The following Python packages are required:
+
+   - requests
+   - pandas
+   - nltk
+   - re (built-in)
+   - os (built-in)
+   - bs4 (BeautifulSoup)
+   - time (built-in)
+   - urllib.parse (built-in)
+   
+   To install the necessary dependencies, run:
+
+  </p><br>
+  </li>
 
 <li style="font-size: large;">
             <h3>Variables</h3>
