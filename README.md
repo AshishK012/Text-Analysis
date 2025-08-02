@@ -1,6 +1,6 @@
 # Text-Analysis
  <h1 style="text-align: center;">Data Extraction and NLP</h1><br>
- <p> The objective of this assignment is to extract textual data articles from the given URL and perform text analysis to compute variables that are explained below. 
+ <p> This project is designed to automate the extraction and analysis of article content from a list of URLs provided in an Excel file (Input.xlsx). The solution uses web scraping techniques to collect text data and processes it using natural language processing (NLP) techniques such as tokenization and part-of-speech tagging. 
  </p>
 <ol>
 <li style="font-size: large;"> 
@@ -29,7 +29,9 @@ While extracting text, please make sure your program extracts only the article t
                     <li>SUBJECTIVITY SCORE</li>
                     <li>AVG SENTENCE LENGTH</li>
                     <li>PERCENTAGE OF COMPLEX WORDS</li> 
+                    <li>FOG INDEX</li>
                     <li>AVG NUMBER OF WORDS PER SENTENCE</li>
+                    <li>COMPLEX WORD COUNT</li>
                     <li>WORD COUNT</li>
                     <li>SYLLABLE PER WORD</li>
                     <li>PERSONAL PRONOUNS</li>
